@@ -7,7 +7,7 @@ nav_order: 3
 
 Make sure you have:
 
-- [Zig 0.14.0](https://ziglang.org/download/)
+- [Zig 0.15.2](https://ziglang.org/download/)
 - [Node.js 21.7.3](https://nodejs.org/)
   - only needed for fetching dependencies & running tests
 - Xcode (for macOS)
