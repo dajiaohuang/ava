@@ -41,12 +41,13 @@ export const defaultSampling: GenerateOptions["sampling"] = {
 
 export const generate = async (options: GenerateOptions, result, status, signal?: AbortSignal) => {
   try {
+    const { sampling, ...params } = options
     status.value = null
     result.value = options.start_with ?? ""
 
     const res = selectedModel.value
       ? jsonLines(
-          (await api.createCompletion({ model: selectedModel.value, stream: true, ...options, signal })).body!.getReader(),
+          (await api.createCompletion({ model: selectedModel.value, stream: true, ...params, ...sampling, signal })).body!.getReader(),
           true
         )
       : await noModelSelected()

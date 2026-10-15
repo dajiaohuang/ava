@@ -4,6 +4,7 @@
   "module": "main.tsx",
   "type": "module",
   "scripts": {
+    "test": "node --test scripts/generate.test.mjs",
     "check": "tsc --noEmit",
     "build": "npm run check && npm run build:js -- --define:DEV=false --minify && npm run build:css",
     "build:js": "esbuild ./src/app/main.tsx --bundle --outfile=./zig-out/app/index.js",
